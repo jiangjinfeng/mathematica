@@ -1,0 +1,196 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      5370,        187]
+NotebookOptionsPosition[      4772,        162]
+NotebookOutlinePosition[      5129,        178]
+CellTagsIndexPosition[      5086,        175]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Borel transform", "Subsection",
+ CellChangeTimes->{{3.595751315114357*^9, 3.595751337607787*^9}, {
+  3.595836628863741*^9, 3.595836631038076*^9}}],
+
+Cell[BoxData[
+ RowBox[{"(*", 
+  RowBox[{
+   RowBox[{
+   "The", " ", "Borel", " ", "transform", " ", "is", "\[IndentingNewLine]", 
+    SuperscriptBox[
+     RowBox[{"(", 
+      SuperscriptBox["q", "2"], ")"}], "n"], "ln", 
+    RowBox[{"(", 
+     FractionBox["1", 
+      RowBox[{"-", 
+       SuperscriptBox["q", "2"]}]], ")"}]}], "\[Rule]", 
+   RowBox[{
+    RowBox[{"\[CapitalGamma]", 
+     RowBox[{"(", 
+      RowBox[{"n", "+", "1"}], ")"}], 
+     SuperscriptBox[
+      RowBox[{"(", 
+       SuperscriptBox["M", "2"], ")"}], 
+      RowBox[{"n", "+", "1"}]], "\[IndentingNewLine]", 
+     SuperscriptBox[
+      RowBox[{"(", 
+       FractionBox["1", 
+        RowBox[{
+         SuperscriptBox["q", "2"], "-", "a"}]], ")"}], 
+      RowBox[{"n", "+", "1"}]]}], "\[Rule]", 
+    RowBox[{
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{"-", "1"}], ")"}], "n"], 
+     FractionBox["1", 
+      RowBox[{"\[CapitalGamma]", 
+       RowBox[{"(", 
+        RowBox[{"n", "+", "1"}], ")"}], 
+       SuperscriptBox["M", "2"]}]], 
+     SuperscriptBox["e", 
+      FractionBox[
+       RowBox[{"-", "a"}], 
+       SuperscriptBox["M", "2"]]]}]}]}], "\[IndentingNewLine]", 
+  "*)"}]], "Input",
+ CellChangeTimes->{{3.595836634210844*^9, 3.59583673663925*^9}, {
+  3.595836871128298*^9, 3.595836978504126*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Borp", "[", 
+   RowBox[{"n_", ",", "ln_"}], "]"}], ":=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"-", 
+     RowBox[{"Gamma", "[", 
+      RowBox[{"n", "+", "1"}], "]"}]}], 
+    SuperscriptBox[
+     RowBox[{"(", " ", 
+      SuperscriptBox["M", "2"], ")"}], 
+     RowBox[{"n", "+", "1"}]]}], "/;", 
+   RowBox[{
+    RowBox[{"n", "\[GreaterEqual]", "0"}], "&&", 
+    RowBox[{"ln", "\[Equal]", "1"}]}]}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Born", "[", 
+   RowBox[{"n_", ",", "a_"}], "]"}], ":=", 
+  RowBox[{
+   RowBox[{
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{"-", "1"}], ")"}], 
+     RowBox[{"-", "n"}]], 
+    FractionBox["1", 
+     RowBox[{
+      RowBox[{"Gamma", "[", 
+       RowBox[{"-", "n"}], "]"}], 
+      SuperscriptBox["M", 
+       RowBox[{
+        RowBox[{"-", "2"}], 
+        RowBox[{"(", 
+         RowBox[{"n", "+", "1"}], ")"}]}]]}]], 
+    RowBox[{"Exp", "[", 
+     FractionBox[
+      RowBox[{"-", "a"}], 
+      SuperscriptBox["M", "2"]], "]"}]}], "/;", 
+   RowBox[{"n", "<", "0"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{"Borp", "[", 
+  RowBox[{"2", ",", "1"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Borp", "[", 
+  RowBox[{"1", ",", "1"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Borp", "[", 
+  RowBox[{"0", ",", "1"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Born", "[", 
+  RowBox[{
+   RowBox[{"-", "1"}], ",", "0"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Born", "[", 
+  RowBox[{
+   RowBox[{"-", "2"}], ",", "0"}], "]"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.59575134068869*^9, 3.595751573050562*^9}, {
+  3.5957516182290497`*^9, 3.5957518803672*^9}, {3.595753203796773*^9, 
+  3.5957532064951277`*^9}, {3.595753260925536*^9, 3.595753291589301*^9}, {
+  3.595753681624528*^9, 3.595753685173037*^9}, {3.595754246032992*^9, 
+  3.595754260345333*^9}, {3.595836993896654*^9, 3.595836997872508*^9}, {
+  3.59584246936197*^9, 3.595842489488858*^9}, {3.595842535035309*^9, 
+  3.595842553204324*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"-", "2"}], " ", 
+   SuperscriptBox["M", "6"]}], TraditionalForm]], "Output",
+ CellChangeTimes->{3.595842565353429*^9}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"-", 
+   SuperscriptBox["M", "4"]}], TraditionalForm]], "Output",
+ CellChangeTimes->{3.595842565355008*^9}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"-", 
+   SuperscriptBox["M", "2"]}], TraditionalForm]], "Output",
+ CellChangeTimes->{3.595842565356485*^9}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"-", "1"}], TraditionalForm]], "Output",
+ CellChangeTimes->{3.595842565358045*^9}],
+
+Cell[BoxData[
+ FormBox[
+  FractionBox["1", 
+   SuperscriptBox["M", "2"]], TraditionalForm]], "Output",
+ CellChangeTimes->{3.5958425653597*^9}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{740, 662},
+WindowMargins->{{Automatic, 213}, {19, Automatic}},
+FrontEndVersion->"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (November 6, \
+2010)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 152, 2, 34, "Subsection"],
+Cell[734, 26, 1286, 41, 117, "Input"],
+Cell[CellGroupData[{
+Cell[2045, 71, 1979, 57, 165, "Input"],
+Cell[4027, 130, 165, 5, 30, "Output"],
+Cell[4195, 137, 141, 4, 30, "Output"],
+Cell[4339, 143, 141, 4, 30, "Output"],
+Cell[4483, 149, 116, 3, 27, "Output"],
+Cell[4602, 154, 142, 4, 48, "Output"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
